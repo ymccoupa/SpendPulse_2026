@@ -193,6 +193,27 @@ const LANDING_SIGNALS = [
       remaining: '30 days',
     },
   },
+    {
+    id: 'tariff-aluminium',
+    title: 'Tariff Change: Aluminium Imports',
+    body: 'A 12% import duty on aluminium takes effect Sep 1, 2025. 6 open purchase orders worth $310K ship after that date and would be assessed at the new rate.',
+    /* Was `Viewed` with the action already taken, and so had no Navi line and a
+       placeholder `Action` CTA. A New card shows the Navi recommendation in
+       place of the Last Updated line, so it needs a real one of each. */
+    navi: 'Navi recommends pulling 6 open purchase orders forward to ship before the duty takes effect on Sep 1, 2025.',
+    status: 'New', ago: '1d ago', cta: 'Pull Orders Forward',
+    by: 'Jason Wills', at: 'Aug 14, 2026 10:30 AM', triggered: 'Aug 14, 2026 8:30 AM',
+    impacts: [
+      ['It will increase landed cost',
+        'Landed cost on $310K of open orders rises by an estimated $37.2K'],
+      ['It will affect 4 active contracts',
+        '4 contracts contain no duty pass-through clause'],
+    ],
+    action: {
+      title: 'Pull Orders Forward',
+      text: 'Navi recommends pulling 6 open purchase orders forward to ship before Sep 1, 2025.',
+    },
+  },
   {
     /* Demo signal 3. Replaced the SilverLine financial-risk card, which said the
        same thing with different numbers — two supplier-risk cards on one rail
@@ -738,27 +759,6 @@ const LANDING_SIGNALS = [
     },
   },
   {
-    id: 'tariff-aluminium',
-    title: 'Tariff Change: Aluminium Imports',
-    body: 'A 12% import duty on aluminium takes effect Sep 1, 2025. 6 open purchase orders worth $310K ship after that date and would be assessed at the new rate.',
-    /* Was `Viewed` with the action already taken, and so had no Navi line and a
-       placeholder `Action` CTA. A New card shows the Navi recommendation in
-       place of the Last Updated line, so it needs a real one of each. */
-    navi: 'Navi recommends pulling 6 open purchase orders forward to ship before the duty takes effect on Sep 1, 2025.',
-    status: 'New', ago: '1d ago', cta: 'Pull Orders Forward',
-    by: 'Jason Wills', at: 'Aug 14, 2026 10:30 AM', triggered: 'Aug 14, 2026 8:30 AM',
-    impacts: [
-      ['It will increase landed cost',
-        'Landed cost on $310K of open orders rises by an estimated $37.2K'],
-      ['It will affect 4 active contracts',
-        '4 contracts contain no duty pass-through clause'],
-    ],
-    action: {
-      title: 'Pull Orders Forward',
-      text: 'Navi recommends pulling 6 open purchase orders forward to ship before Sep 1, 2025.',
-    },
-  },
-  {
     id: 'payment-terms-mismatch',
     title: 'Payment Terms Mismatch',
     body: '38 suppliers are being paid on Net 30 while their contracts specify Net 60, pulling $210K of working capital forward each month.',
@@ -832,7 +832,7 @@ const CHART_SERIES = [
     y: [107, 127, 124, 158, 152, 149, 128, 149, 160, 151, 163, 166] },
   { label: 'Commodities less food and energy commodities in U.S. city average', color: '#ca073e',
     y: [137, 137, 119, 122, 125, 135, 118, 107, 103, 140, 113, 144] },
-  { label: 'Apparel less footwear', color: '#5c0dc5',
+  { label: 'Crude Oil', color: '#5c0dc5',
     y: [166, 163, 151, 160, 149, 128, 149, 152, 158, 124, 127, 107] },
 ];
 
@@ -844,7 +844,7 @@ const LEGEND_HOVER = {
     { label: 'Durables', value: '4.6%', color: '#ffbf6c' },
     { label: 'Commodities less food', value: '1.3%', color: '#ca073e' },
     { label: 'Cereals and bakery products', value: '0.3%', color: '#ef91f3' },
-    { label: 'Apparel less footwear', value: '-2.1%', color: '#5c0dc5' },
+    { label: 'Crude Oil', value: '-2.1%', color: '#5c0dc5' },
   ],
 };
 
@@ -1225,7 +1225,7 @@ const SELECTED_INDICES = [
   'Information and information processing in U.S. city average, all urban consumers',
   'Commodities less food and energy commodities in U.S. city average',
   'All items in U.S. city average, all urban consumers',
-  'Apparel less footwear',
+  'Crude Oil',
 ];
 
 const HISTORY = [
